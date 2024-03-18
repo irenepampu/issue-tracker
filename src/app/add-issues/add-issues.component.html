@@ -1,0 +1,61 @@
+<div class="main-container">
+  <div class="header">
+    <h2>Add a new issue here:</h2>
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-form-field">
+      <mat-label>Issue description:</mat-label>
+      <input
+        (change)="descriptionChanged($event)"
+        [formControl]="descriptionControl"
+        matInput
+        placeholder="Describe the issue..."
+        required
+      />
+      @if (descriptionControl.value) {
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="descriptionControl.setValue('')"
+      >
+        <mat-icon>close</mat-icon></button
+      >}
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field">
+      <mat-label>Severity</mat-label>
+      <mat-select
+        (change)="severityChanged($event)"
+        [formControl]="severityControl"
+        required
+      >
+        <mat-option *ngFor="let severity of severitiesList" [value]="severity">
+          {{ severity }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field">
+      <mat-label>Assigned to:</mat-label>
+      <input
+        (change)="assigneeChanged($event)"
+        [formControl]="assigneeControl"
+        required
+        matInput
+        placeholder="Enter the responsible person..."
+      />
+      @if (assigneeControl.value) {
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="assigneeControl.setValue('')"
+      >
+        <mat-icon>close</mat-icon></button
+      >}
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">Add</button>
+  </form>
+</div>

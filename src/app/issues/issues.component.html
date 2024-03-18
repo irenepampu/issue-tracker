@@ -1,0 +1,15 @@
+<div class="issues-container">
+  <div *ngFor="let issue of issues">
+    <p>Issue ID: {{ issue.id }}</p>
+    <h2>{{ issue.description }}</h2>
+    <p>Severity: {{ issue.severity }}</p>
+    <p>Assigned to: {{ issue.assigned }}</p>
+    <p>Status: {{ issue.status }}</p>
+    <button mat-raised-button color="warn" (click)="onCloseIssue(issue)">
+      Close
+    </button>
+    <button mat-raised-button color="accent" (click)="onDeleteIssue(issue.id!)">
+      Delete
+    </button>
+  </div>
+</div>
