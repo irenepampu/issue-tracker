@@ -5,13 +5,39 @@
 }
 
 .main-container {
-  width: 100%;
-  height: 100%;
-  background-color: beige;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.example-form {
   display: flex;
   flex-direction: column;
 }
 
-.header {
+.example-form-field {
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
   width: 100%;
+}
+
+button.mat-raised-button {
+  width: 100%;
+}
+
+button[mat-icon-button] {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button[mat-icon-button]:hover {
+  background-color: #ccc;
 }

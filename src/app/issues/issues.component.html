@@ -1,10 +1,17 @@
 <div class="issues-container">
   <div *ngFor="let issue of issues">
     <p>Issue ID: {{ issue.id }}</p>
+    <p [class]="getStatusClass(issue.status)">Status: {{ issue.status }}</p>
     <h2>{{ issue.description }}</h2>
-    <p>Severity: {{ issue.severity }}</p>
-    <p>Assigned to: {{ issue.assigned }}</p>
-    <p>Status: {{ issue.status }}</p>
+    <p class="severity">
+      <mat-icon class="severity-icon">priority_high</mat-icon>
+      {{ issue.severity }}
+    </p>
+    <p class="assigned">
+      <mat-icon class="assignment-icon">assignment_ind</mat-icon>
+      {{ issue.assigned }}
+    </p>
+
     <button mat-raised-button color="warn" (click)="onCloseIssue(issue)">
       Close
     </button>

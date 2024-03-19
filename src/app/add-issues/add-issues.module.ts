@@ -15,6 +15,7 @@ const MATERIAL_MODULES = [
   MatFormFieldModule,
   MatOption,
   MatSelectModule,
+  MatIconModule,
 ];
 
 @NgModule({
@@ -23,8 +24,6 @@ const MATERIAL_MODULES = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule,
-
     ...MATERIAL_MODULES,
   ],
   exports: [AddIssuesComponent],

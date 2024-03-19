@@ -24,4 +24,8 @@ export class IssuesComponent implements OnInit {
     this.issueService.deleteIssueById(id);
     this.issues = this.issueService.getIssues();
   }
+
+  getStatusClass(status: string) {
+    return status === 'Open' ? 'status-open' : 'status-closed';
+  }
 }

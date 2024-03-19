@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 const MATERIAL_MODULES = [
   MatButtonModule,
@@ -12,6 +13,7 @@ const MATERIAL_MODULES = [
   MatFormFieldModule,
   MatOption,
   MatSelectModule,
+  MatIcon,
 ];
 @NgModule({
   declarations: [IssuesComponent],
